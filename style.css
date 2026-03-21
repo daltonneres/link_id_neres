@@ -16,7 +16,7 @@ body {
 .hero h1 {
   font-size: 6rem;
   line-height: 0.9;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .subtitle {
@@ -26,29 +26,48 @@ body {
   color: #aaa;
 }
 
-.name-n {
-  position: relative;
-  display: inline-block;
-}
-
-.name-n::after {
-  content: "🚀";
-  position: absolute;
-  top: -20px;
-  right: -10px;
-  transform: rotate(-15deg);
-  font-size: 1.4rem;
-}
 
 /* SOBRE */
 .sobre {
   display: flex;
-  justify-content: flex-end;
-  padding: 100px 10%;
+  justify-content: flex-end; /* 👈 joga pro lado direito */
+  padding: 120px 10%;
 }
 
 .sobre .content {
-  max-width: 500px;
+  max-width: 600px;
+
+  /* espelho visual */
+  border-right: 2px solid #2563eb;
+  padding-right: 20px;
+  text-align: right;
+}
+
+/* título */
+.sobre h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* texto */
+.sobre p {
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+
+  .sobre {
+    padding: 80px 6%;
+  }
+
+  .sobre .content {
+    border-right: none;
+    padding-right: 0;
+    text-align: left; /* 👈 volta ao normal no mobile */
+  }
+
 }
 
 .skills {
@@ -64,6 +83,53 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+/* PERFIL PROFISSIONAL */
+.profissional {
+  display: flex;
+  justify-content: flex-start;
+  padding: 120px 10%;
+}
+
+.profissional .content {
+  max-width: 600px;
+}
+
+/* título */
+.profissional h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* textos */
+.profissional p {
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* detalhe visual sutil */
+.profissional .content {
+  border-left: 2px solid #2563eb;
+  padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .profissional {
+    padding: 80px 6%;
+  }
+
+  .profissional h2 {
+    font-size: 2rem;
+  }
+
+  .profissional .content {
+    border-left: none;
+    padding-left: 0;
+  }
+
 }
 
 /* pills modernas */
@@ -311,8 +377,8 @@ body {
 /* SCROLL REVEAL */
 .reveal {
   opacity: 0;
-  transform: translateY(60px);
-  transition: 0.8s;
+  transform: translateY(80px);
+  transition: all 0.8s ease;
 }
 
 .reveal.active {
