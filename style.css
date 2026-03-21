@@ -26,6 +26,20 @@ body {
   color: #aaa;
 }
 
+.name-n {
+  position: relative;
+  display: inline-block;
+}
+
+.name-n::after {
+  content: "🚀";
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  transform: rotate(-15deg);
+  font-size: 1.4rem;
+}
+
 /* SOBRE */
 .sobre {
   display: flex;
