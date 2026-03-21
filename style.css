@@ -14,9 +14,10 @@ body {
 }
 
 .hero h1 {
-  font-size: 6rem;
+  font-size: clamp(2.5rem, 8vw, 6rem);
   line-height: 0.9;
-  font-weight: 500;
+  font-weight: 800;
+  overflow-wrap: break-word;
 }
 
 .subtitle {
