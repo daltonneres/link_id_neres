@@ -1,0 +1,291 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* HERO ESTILO FIAP */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.hero h1 {
+  font-size: 6rem;
+  line-height: 0.9;
+  font-weight: 900;
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  max-width: 400px;
+  color: #aaa;
+}
+
+/* SOBRE */
+.sobre {
+  display: flex;
+  justify-content: flex-end;
+  padding: 100px 10%;
+}
+
+.sobre .content {
+  max-width: 500px;
+}
+
+/* SKILLS */
+.skills {
+  padding: 100px 10%;
+}
+
+.grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.grid span {
+  border: 1px solid #333;
+  padding: 10px 15px;
+  border-radius: 30px;
+}
+
+/* TECH SCROLL */
+.tech {
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* efeito fade nas laterais (nível FIAP) */
+.tech::before,
+.tech::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tech::before {
+  left: 0;
+  background: linear-gradient(to right, #111, transparent);
+}
+
+.tech::after {
+  right: 0;
+  background: linear-gradient(to left, #111, transparent);
+}
+
+/* container */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* faixa animada */
+.track {
+  display: flex;
+  gap: 100px;
+  width: max-content;
+  animation: scroll 50s linear infinite;
+}
+
+/* linha invertida */
+.marquee.reverse .track {
+  animation-direction: reverse;
+}
+
+/* ícones */
+.track img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+/* hover (fica lindo) */
+.track img:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* animação infinita REAL */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* PROJETOS */
+.projetos {
+  padding: 120px 10%;
+}
+
+.projetos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+/* GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.card {
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  padding: 25px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #2563eb;
+}
+
+/* título */
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* descrição */
+.card p {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* BOTÕES */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* botão padrão */
+.buttons a {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* botão principal */
+.buttons a:first-child {
+  background: #2563eb;
+  color: #fff;
+}
+
+.buttons a:first-child:hover {
+  background: #1e40af;
+}
+
+/* botão secundário */
+.buttons a:last-child {
+  border: 1px solid #333;
+  color: #ccc;
+}
+
+.buttons a:last-child:hover {
+  border-color: #2563eb;
+  color: #fff;
+}
+
+.footer {
+  padding: 120px 10%;
+  text-align: center;
+}
+
+.footer h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.footer .subtitle {
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+/* GRID SOCIAL */
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* LINKS */
+.social a {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1px solid #222;
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+/* HOVER */
+.social a:hover {
+  border-color: #2563eb;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* BOTÃO PRINCIPAL (PORTFÓLIO) */
+.social a.main {
+  background: #2563eb;
+  color: white;
+  border: none;
+}
+
+.social a.main:hover {
+  background: #1e40af;
+}
+
+/* COPYRIGHT */
+.copy {
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.8s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
