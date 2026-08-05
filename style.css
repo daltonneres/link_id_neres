@@ -773,6 +773,98 @@ body {
   color: var(--text);
 }
 
+/* ─── CASE DE SUCESSO ───────────────────────────────────────────────────────── */
+.case-sucesso {
+  padding: 120px 10%;
+}
+
+.case-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  align-items: center;
+
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  transition: 0.3s;
+}
+
+.case-container:hover {
+  border-color: var(--blue);
+}
+
+.case-video video {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  background: #000;
+  aspect-ratio: 9 / 16;
+  max-height: 520px;
+  object-fit: cover;
+}
+
+.case-info h2 {
+  font-size: 1.9rem;
+  margin-bottom: 6px;
+}
+
+.case-cargo {
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+}
+
+.case-texto {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.case-quote {
+  border-left: 3px solid var(--blue);
+  padding-left: 18px;
+  margin-bottom: 30px;
+  color: #ddd;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.case-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .case-sucesso { padding: 80px 6%; }
+
+  .case-container {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .case-video video {
+    max-height: 420px;
+  }
+}
+
 /* ─── DEPOIMENTOS ───────────────────────────────────────────────────────────── */
 .depoimentos {
   padding: 120px 10%;
