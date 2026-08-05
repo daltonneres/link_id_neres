@@ -8,6 +8,4 @@ Atuo como **Desenvolvedor de Software na CISS S.A | Gestão para o Varejo** e ta
 
 Sou apaixonado por tecnologia e desenvolvimento, com foco na construção de aplicações funcionais, acessíveis e bem estruturadas. Busco sempre unir **performance, usabilidade e design** para entregar produtos que realmente gerem valor para pessoas e empresas.
 
-Além disso, sou idealizador do projeto **HabitPAY**, uma solução em desenvolvimento voltada à inovação em pagamentos e automação, atualmente em processo de incubação pela Sudotec.
-
 Estou em constante evolução, explorando novas tecnologias, boas práticas e tendências do mercado, com o objetivo de desenvolver soluções digitais de alto impacto e relevância. 🚀
