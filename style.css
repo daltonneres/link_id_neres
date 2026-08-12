@@ -654,6 +654,16 @@ body {
   border-color: var(--blue);
 }
 
+.servico-destaque {
+  border-style: dashed;
+  border-color: #333;
+  background: linear-gradient(180deg, var(--bg-card), rgba(37, 99, 235, 0.06));
+}
+
+.servico-destaque:hover {
+  border-style: solid;
+}
+
 .servico-card h3 { margin-bottom: 10px; font-size: 1.05rem; }
 .servico-card p  { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
 .servico-actions { margin-top: auto; }
@@ -737,8 +747,35 @@ body {
   border-color: var(--blue);
 }
 
-.card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.card h3 { font-size: 1.1rem; margin-bottom: 14px; }
 .card p  { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+
+/* ─── ESTRUTURA PROBLEMA / SOLUÇÃO / RESULTADO ──────────────────────────────── */
+.card-psr {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-psr p {
+  margin: 0;
+  font-size: 0.87rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.card-psr .psr-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-right: 6px;
+}
+
+.card-psr .problema .psr-label { color: #999; }
+.card-psr .solucao  .psr-label { color: var(--blue); }
+.card-psr .resultado .psr-label { color: #00d97e; }
 
 .buttons {
   margin-top: 20px;
