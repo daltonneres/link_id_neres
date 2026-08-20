@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>404 - Página não encontrada</title>
+<style>
+  :root{
+    --blue:#5b9dff;
+    --green:#2be3a3;
+    --ghost:#f85a5a;
+    --ink:#f2f2f4;
+    --muted:#83899b;
+    --link:#5b9dff;
+    --bg:#0b0b0d;
+    --card:#131317;
+    --steam:#d8d8dc;
+  }
+
+  *{box-sizing:border-box;}
+
+  html,body{
+    height:100%;
+    margin:0;
+    background:var(--bg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .card{
+    width:min(620px,92vw);
+    background:var(--card);
+    border-radius:18px;
+    padding:64px 40px 56px;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,.4),
+      0 30px 70px -20px rgba(0,0,0,.7),
+      0 0 0 1px rgba(255,255,255,.05);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* soft ambient glow that pulses gently behind the ghost */
+  .card::before{
+    content:"";
+    position:absolute;
+    top:38%;
+    left:50%;
+    width:280px;
+    height:280px;
+    background:radial-gradient(circle, rgba(248,90,90,.20), transparent 70%);
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    animation:glow 3.2s ease-in-out infinite;
+    animation-delay:1.4s;
+    opacity:0;
+  }
+
+  @keyframes glow{
+    0%,100%{opacity:.0; transform:translate(-50%,-50%) scale(.9);}
+    50%{opacity:1; transform:translate(-50%,-50%) scale(1.05);}
+  }
+
+  .stage{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    height:150px;
+    position:relative;
+  }
+
+  .num{
+    font-size:130px;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:-4px;
+    opacity:0;
+    filter:blur(2px);
+  }
+
+  .num.blue{ color:var(--blue); }
+  .num.green{ color:var(--green); }
+
+  .num.left{
+    transform:translateX(60px);
+    animation:slideIn 0.7s cubic-bezier(.22,1,.36,1) forwards;
+    animation-delay:0.75s;
+  }
+
+  .num.right{
+    transform:translateX(-60px);
+    animation:slideIn 0.7s cubic-bezier(.22,1,.36,1) forwards;
+    animation-delay:0.85s;
+  }
+
+  @keyframes slideIn{
+    to{ opacity:1; transform:translateX(0); filter:blur(0); }
+  }
+
+  .ghost-wrap{
+    width:110px;
+    height:150px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    opacity:0;
+    transform:translateY(-140px);
+    animation:drop 0.85s cubic-bezier(.34,1.4,.4,1) forwards;
+    animation-delay:0.05s;
+  }
+
+  @keyframes drop{
+    0%{ opacity:0; transform:translateY(-140px) scale(.9); }
+    60%{ opacity:1; }
+    100%{ opacity:1; transform:translateY(0) scale(1); }
+  }
+
+  .ghost{
+    width:100px;
+    height:auto;
+    animation:float 2.6s ease-in-out infinite, wiggle 2.6s ease-in-out infinite;
+    animation-delay:0.85s, 0.85s;
+    transform-origin:center bottom;
+  }
+
+  @keyframes float{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-8px); }
+  }
+
+  @keyframes wiggle{
+    0%,100%{ transform:rotate(0deg) translateY(0); }
+    25%{ transform:rotate(-2deg) translateY(-4px); }
+    75%{ transform:rotate(2deg) translateY(-4px); }
+  }
+
+  .eye{
+    animation:blink 4s ease-in-out infinite;
+    animation-delay:1.6s;
+    transform-origin:center;
+  }
+
+  .steam path{
+    animation:rise 2.4s ease-in-out infinite;
+    transform-origin:center bottom;
+  }
+  .steam path:nth-child(2){ animation-delay:0.6s; }
+
+  @keyframes rise{
+    0%{ opacity:0; transform:translateY(4px) scaleY(.8); }
+    35%{ opacity:.6; }
+    100%{ opacity:0; transform:translateY(-14px) scaleY(1.15); }
+  }
+
+  @keyframes blink{
+    0%, 92%, 100%{ transform:scaleY(1); }
+    95%{ transform:scaleY(.1); }
+  }
+
+  h1{
+    margin:34px 0 10px;
+    font-size:26px;
+    font-weight:800;
+    color:var(--ink);
+    opacity:0;
+    transform:translateY(14px);
+    animation:fadeUp 0.6s ease forwards;
+    animation-delay:1.55s;
+  }
+
+  p{
+    margin:0;
+    font-size:14.5px;
+    color:var(--muted);
+    opacity:0;
+    transform:translateY(14px);
+    animation:fadeUp 0.6s ease forwards;
+    animation-delay:1.75s;
+  }
+
+  @keyframes fadeUp{
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  a{
+    color:var(--link);
+    text-decoration:none;
+    font-weight:600;
+  }
+  a:hover{ text-decoration:underline; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; opacity:1 !important; transform:none !important; filter:none !important; }
+  }
+
+  @media (max-width:480px){
+    .num{ font-size:88px; }
+    .stage{ height:110px; }
+    .ghost{ width:74px; }
+    .ghost-wrap{ width:80px; height:110px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="stage">
+      <span class="num blue left">4</span>
+
+      <div class="ghost-wrap">
+        <svg class="ghost" viewBox="0 0 230 240" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- steam wisps, rise above the cup -->
+          <g class="steam">
+            <path d="M182 88 c-6 -8 6 -12 0 -20" stroke="#d8d8dc" stroke-width="4" stroke-linecap="round" fill="none" opacity=".55"/>
+            <path d="M196 90 c-6 -8 6 -12 0 -20" stroke="#d8d8dc" stroke-width="4" stroke-linecap="round" fill="none" opacity=".4"/>
+          </g>
+
+          <!-- ghost body -->
+          <path fill="#f85a5a" d="M100 30
+            c-49.7 0-90 40.3-90 90
+            v96
+            l22-20 20 20 20-20 20 20 20-20 20 20 20-20 20 20 20-20
+            V120
+            c0-49.7-40.3-90-90-90z"/>
+
+          <ellipse class="eye" cx="72" cy="118" rx="11" ry="13" fill="#ffffff"/>
+          <ellipse class="eye" cx="128" cy="118" rx="11" ry="13" fill="#ffffff"/>
+
+          <!-- little arm reaching for the cup -->
+          <path d="M158 150 c14 4 20 -2 26 -14" stroke="#f85a5a" stroke-width="14" stroke-linecap="round" fill="none"/>
+
+          <!-- coffee cup -->
+          <g transform="translate(170,128)">
+            <path d="M0 14 h40 l-4 34 a6 6 0 0 1 -6 6 h-20 a6 6 0 0 1 -6 -6 z" fill="#ece7e1"/>
+            <path d="M38 20 c14 -4 16 18 2 18" fill="none" stroke="#ece7e1" stroke-width="6" stroke-linecap="round"/>
+            <rect x="0" y="8" width="40" height="9" rx="4.5" fill="#d8d2c9"/>
+          </g>
+        </svg>
+      </div>
+
+      <span class="num green right">4</span>
+    </div>
+
+    <h1>Ooops, parece um fantasma!</h1>
+    <p>A página que você procura não pôde ser encontrada. Volte para o início <a href="#">clicando aqui</a>!</p>
+  </div>
+
+</body>
+</html>
