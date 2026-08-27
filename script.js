@@ -12,6 +12,13 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal, .fade-in').forEach(el => revealObserver.observe(el));
 
+// Cards entram com um leve efeito de profundidade, em sequência, ao aparecer na tela.
+document.querySelectorAll('.filosofia-card, .resultado-card, .certificado-card, .projeto-card, .depoimento-card, .idioma-card').forEach((el, index) => {
+  el.classList.add('reveal-card');
+  el.style.setProperty('--reveal-delay', `${(index % 4) * 70}ms`);
+  revealObserver.observe(el);
+});
+
 
 // ─── CONTADOR ANIMADO (via IntersectionObserver, reanima ao voltar) ────────────
 const counterObserver = new IntersectionObserver((entries) => {
@@ -45,6 +52,7 @@ if (resultadosSection) counterObserver.observe(resultadosSection);
 // ─── NAVBAR: oculta ao scrollar para baixo, aparece ao subir ──────────────────
 let lastScrollY = 0;
 const navbar = document.getElementById('navbar');
+const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
   const current = window.scrollY;
@@ -69,7 +77,10 @@ window.addEventListener('scroll', () => {
   });
 
   lastScrollY = current;
+  backToTop?.classList.toggle('show', current > 520);
 }, { passive: true });
+
+backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 
 // ─── MENU MOBILE: toggle ──────────────────────────────────────────────────────
@@ -85,4 +96,3 @@ menuToggle?.addEventListener('click', () => {
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => navMenu.classList.remove('open'));
 });
-

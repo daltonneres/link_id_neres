@@ -12,10 +12,17 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal, .fade-in').forEach(el => revealObserver.observe(el));
 
+document.querySelectorAll('.servico-card, .filosofia-card').forEach((el, index) => {
+  el.classList.add('reveal-card');
+  el.style.setProperty('--reveal-delay', `${(index % 4) * 70}ms`);
+  revealObserver.observe(el);
+});
+
 
 // ─── NAVBAR: oculta ao scrollar para baixo, aparece ao subir ──────────────────
 let lastScrollY = 0;
 const navbar = document.getElementById('navbar');
+const backToTop = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
   const current = window.scrollY;
@@ -39,7 +46,10 @@ window.addEventListener('scroll', () => {
   });
 
   lastScrollY = current;
+  backToTop?.classList.toggle('show', current > 520);
 }, { passive: true });
+
+backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 
 // ─── MODAL: abrir, fechar com botão, Esc e clique fora ────────────────────────
