@@ -1027,6 +1027,7 @@ body::after {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
   text-align: left;
+  align-items: start;
 }
 
 .depoimento-card {
@@ -1053,6 +1054,8 @@ body::after {
   font-size: 1rem;
   margin-bottom: 6px;
 }
+
+.depoimento-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
 
 .depoimento-card .texto {
   font-style: italic;
