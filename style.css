@@ -359,6 +359,7 @@ body::after {
 
 /* ─── SOBRE ─────────────────────────────────────────────────────────────────── */
 .sobre {
+<<<<<<< HEAD
   padding: 120px 10%;
 }
 
@@ -380,22 +381,41 @@ body::after {
   border-left: 2px solid var(--blue);
   padding-left: 12px;
   margin-bottom: 18px;
+=======
+  display: flex;
+  justify-content: flex-end;
+  padding: 120px 10%;
+}
+
+.sobre .content {
+  max-width: 600px;
+  border-right: 2px solid var(--blue);
+  padding-right: 20px;
+  text-align: right;
+>>>>>>> 301a151116cb807be53407d60c35f4ebb1e89d6a
 }
 
 .sobre h2 {
   font-size: 2.5rem;
+<<<<<<< HEAD
   line-height: 1.15;
   margin-bottom: 24px;
 }
 
 .sobre h2 .destaque { color: var(--blue); }
 
+=======
+  margin-bottom: 20px;
+}
+
+>>>>>>> 301a151116cb807be53407d60c35f4ebb1e89d6a
 .sobre p {
   color: var(--muted);
   line-height: 1.7;
   margin-bottom: 15px;
 }
 
+<<<<<<< HEAD
 .sobre p strong { color: var(--text); font-weight: 600; }
 
 .sobre-link {
@@ -455,6 +475,15 @@ body::after {
 @media (max-width: 768px) {
   .sobre { padding: 80px 6%; }
   .sobre h2 { font-size: 2rem; }
+=======
+@media (max-width: 768px) {
+  .sobre { padding: 80px 6%; }
+  .sobre .content {
+    border-right: none;
+    padding-right: 0;
+    text-align: left;
+  }
+>>>>>>> 301a151116cb807be53407d60c35f4ebb1e89d6a
 }
 
 /* ─── PERFIL PROFISSIONAL ───────────────────────────────────────────────────── */
@@ -1367,6 +1396,7 @@ body::after {
     padding: 80px 6%;
   }
 }
+<<<<<<< HEAD
 
 /* ─── ÍCONES E AJUSTE DE CARDS ──────────────────────────────────────────────── */
 .ico {
@@ -1406,3 +1436,5 @@ body::after {
 .certificado-icone { color: var(--blue); display: grid; place-items: center; }
 
 .servico-card h3, .filosofia-card h3, .card h3 { line-height: 1.3; }
+=======
+>>>>>>> 301a151116cb807be53407d60c35f4ebb1e89d6a
