@@ -359,22 +359,36 @@ body::after {
 
 /* ─── SOBRE ─────────────────────────────────────────────────────────────────── */
 .sobre {
-  display: flex;
-  justify-content: flex-end;
   padding: 120px 10%;
 }
 
-.sobre .content {
-  max-width: 600px;
-  border-right: 2px solid var(--blue);
-  padding-right: 20px;
-  text-align: right;
+.sobre-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.sobre-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  border-left: 2px solid var(--blue);
+  padding-left: 12px;
+  margin-bottom: 18px;
 }
 
 .sobre h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  line-height: 1.15;
+  margin-bottom: 24px;
 }
+
+.sobre h2 .destaque { color: var(--blue); }
 
 .sobre p {
   color: var(--muted);
@@ -382,13 +396,65 @@ body::after {
   margin-bottom: 15px;
 }
 
+.sobre p strong { color: var(--text); font-weight: 600; }
+
+.sobre-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--blue);
+  padding-bottom: 3px;
+  transition: 0.3s;
+}
+
+.sobre-link:hover { color: var(--blue); transform: translateX(4px); }
+
+.sobre-frentes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.frente-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 22px 24px 22px 76px;
+  transition: 0.3s;
+}
+
+.frente-card:hover {
+  transform: translateX(-6px);
+  border-color: var(--blue);
+}
+
+.frente-icon {
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  background: rgba(37, 99, 235, 0.12);
+  border-radius: 10px;
+}
+
+.frente-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+.frente-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+
+@media (max-width: 900px) {
+  .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
 @media (max-width: 768px) {
   .sobre { padding: 80px 6%; }
-  .sobre .content {
-    border-right: none;
-    padding-right: 0;
-    text-align: left;
-  }
+  .sobre h2 { font-size: 2rem; }
 }
 
 /* ─── PERFIL PROFISSIONAL ───────────────────────────────────────────────────── */
@@ -1301,3 +1367,42 @@ body::after {
     padding: 80px 6%;
   }
 }
+
+/* ─── ÍCONES E AJUSTE DE CARDS ──────────────────────────────────────────────── */
+.ico {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  color: var(--blue);
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.frente-icon svg, .certificado-icone svg { display: block; }
+
+.frente-icon {
+  width: 42px;
+  height: 42px;
+  color: var(--blue);
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.frente-card { padding: 22px 24px 22px 80px; }
+.frente-card h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.frente-card:hover { transform: none; }
+
+.filosofia-card, .servico-card, .resultado-card, .card, .depoimento-card {
+  border-radius: 14px;
+}
+
+.filosofia-card:hover, .servico-card:hover, .resultado-card:hover, .card:hover {
+  transform: translateY(-3px);
+}
+
+.certificado-icone { color: var(--blue); display: grid; place-items: center; }
+
+.servico-card h3, .filosofia-card h3, .card h3 { line-height: 1.3; }

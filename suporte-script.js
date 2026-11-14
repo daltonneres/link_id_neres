@@ -59,10 +59,10 @@ function abrirModal(servico) {
   servicoSelecionado = servico;
 
   const titulos = {
-    iphone: "🍎 Recuperação de iPhone",
-    formatacao: "💻 Formatação & Sistema",
-    virus: "🛡️ Remoção de Vírus",
-    android: "🔓 Desbloqueio Android"
+    iphone: "Recuperação de iPhone",
+    formatacao: "Formatação & Sistema",
+    virus: "Remoção de Vírus",
+    android: "Desbloqueio Android"
   };
 
   document.getElementById("tituloServico").innerText = titulos[servico] || servico;
@@ -103,7 +103,7 @@ function enviarWhatsApp() {
   }
 
   const msg = `Olá, me chamo ${nome}.\nServiço: ${servicoSelecionado}\nModelo: ${modelo || "Não informado"}\nProblema: ${descricao}`;
-  const url = `https://wa.me/5546999711937?text=${encodeURIComponent(msg)}`;
+  const url = `https://wa.me/554691183094?text=${encodeURIComponent(msg)}`;
   window.open(url, "_blank");
 }
 
