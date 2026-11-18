@@ -112,6 +112,12 @@ body::after {
   color: var(--blue);
 }
 
+.nav-logo img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
 /* ─── MENU DESKTOP ──────────────────────────────────────────────────────────── */
 #navMenu {
   display: flex;
@@ -277,6 +283,10 @@ body::after {
 
   .nav-logo {
     font-size: 1rem;
+  }
+
+  .nav-logo img {
+    height: 30px;
   }
 
   #menuToggle {
